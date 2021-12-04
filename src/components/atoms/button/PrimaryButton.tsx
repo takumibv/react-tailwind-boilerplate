@@ -1,24 +1,24 @@
-import { Button } from "@chakra-ui/react";
-import { VFC } from "react";
+import { VFC } from 'react';
+import classNames from 'classnames';
 
 type Props = {
   children: React.ReactNode;
+  className?: string;
   onClick?: () => void;
   disabled?: boolean;
   loading?: boolean;
 };
 
-export const PrimaryButton: VFC<Props> = ({ children, onClick, disabled = false, loading = false }) => {
+export const PrimaryButton: VFC<Props> = function ({
+  children, onClick, disabled = false, loading = false, className,
+}) {
   return (
-    <Button
-      bg="teal.400"
-      color="white"
-      _hover={{ opacity: "0.8" }}
+    <button
+      className={classNames(className)}
       onClick={onClick}
       disabled={disabled || loading}
-      isLoading={loading}
     >
       {children}
-    </Button>
+    </button>
   );
-}
+};

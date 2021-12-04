@@ -1,5 +1,3 @@
-import { memo, VFC } from "react";
+import { memo, VFC } from 'react';
 
-export const Home: VFC = memo(() => {
-  return <div>Home</div>;
-})
+export const Home: VFC = memo(() => <div>Home</div>);

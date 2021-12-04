@@ -1,8 +1,7 @@
-import { useToast } from "@chakra-ui/toast";
-import axios from "axios";
-import { useCallback, useState } from "react";
-import { UserResponse } from "../types/api/userResponse";
-import { useMessage } from "./useMessage";
+import axios from 'axios';
+import { useCallback, useState } from 'react';
+import { UserResponse } from '../types/api/userResponse';
+import { useMessage } from './useMessage';
 
 export const useAllUsers = () => {
   const [loading, setLoading] = useState(false);
@@ -13,15 +12,16 @@ export const useAllUsers = () => {
     async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get<UserResponse[]>(`https://jsonplaceholder.typicode.com/users`);
+        const { data } = await axios.get<UserResponse[]>('https://jsonplaceholder.typicode.com/users');
         setUers(data);
       } catch (e) {
-        showMessage({ title: "ユーザ取得に失敗しました", status: "error" });
+        showMessage({ title: 'ユーザ取得に失敗しました', status: 'error' });
       } finally {
         setLoading(false);
       }
     },
-    []);
+    [],
+  );
 
   return { getUsers, loading, users };
 };
