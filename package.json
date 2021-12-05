@@ -23,8 +23,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .jsx,.js,.tsx,.ts src/",
-    "fix:prettier": "prettier --write src/"
+    "fix:all": "run-p fix:eslint fix:stylelint fix:prettier",
+    "fix:eslint": "eslint --ext .jsx,.js,.tsx,.ts src/",
+    "fix:stylelint": "stylelint --fix \"src/**/*.{css,scss,sass,pcss}\"",
+    "fix:prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "fix:all"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +61,8 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.5.0",
     "stylelint": "^14.1.0",
     "stylelint-config-prettier": "^9.0.3",
