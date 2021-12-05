@@ -1,24 +1,25 @@
-import {
-  memo, useCallback, useEffect, useState, VFC,
-} from 'react';
-import { useAllUsers } from '../../hooks/useAllUsers';
-import { UserResponse } from '../../types/api/userResponse';
-import { useSelectUsers } from '../../hooks/useSelectUsers';
-import { useLoginUser } from '../../hooks/useLoginUser';
-import { UserCard } from '../organisms/user/UserCard';
+import { memo, useCallback, useEffect, VFC } from "react";
+import { useAllUsers } from "../../hooks/useAllUsers";
+import { UserResponse } from "../../types/api/userResponse";
+import { useSelectUsers } from "../../hooks/useSelectUsers";
+import { useLoginUser } from "../../hooks/useLoginUser";
+import { UserCard } from "../organisms/user/UserCard";
 
 export const UserManagement: VFC = memo(() => {
   const { getUsers, users, loading } = useAllUsers();
-  const { selectedUser, onSelectUser } = useSelectUsers();
+  const { onSelectUser } = useSelectUsers();
   const { loginUser } = useLoginUser();
 
   useEffect(() => {
     getUsers();
   }, []);
 
-  const onClickUser = useCallback((id: number) => {
-    onSelectUser(id, users);
-  }, [users, onSelectUser]);
+  const onClickUser = useCallback(
+    (id: number) => {
+      onSelectUser(id, users);
+    },
+    [users, onSelectUser, loginUser],
+  );
 
   return (
     <>

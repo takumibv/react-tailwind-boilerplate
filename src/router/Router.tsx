@@ -1,10 +1,10 @@
-import { VFC } from 'react';
-import { Route, Switch } from 'react-router';
-import { Page404 } from '../components/pages/404';
-import { Login } from '../components/pages/Login';
-import { HeaderLayout } from '../components/templates/HeaderLayout';
-import { LoginUserProvider } from '../providers/LoginUserProvider';
-import { homeRoutes } from './HomeRoutes';
+import { VFC } from "react";
+import { Route, Switch } from "react-router";
+import { Page404 } from "../components/pages/404";
+import { Login } from "../components/pages/Login";
+import { HeaderLayout } from "../components/templates/HeaderLayout";
+import { LoginUserProvider } from "../providers/LoginUserProvider";
+import { homeRoutes } from "./HomeRoutes";
 
 export const Router: VFC = function () {
   return (

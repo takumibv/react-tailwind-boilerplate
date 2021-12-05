@@ -11,7 +11,7 @@ export type UserResponse = {
     geo: {
       lat: string;
       lng: string;
-    }
+    };
   };
   phone: string;
   website: string;
@@ -19,5 +19,5 @@ export type UserResponse = {
     name: string;
     catchPhrase: string;
     bs: string;
-  }
-}
+  };
+};

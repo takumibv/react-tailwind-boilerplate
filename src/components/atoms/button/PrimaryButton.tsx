@@ -1,5 +1,5 @@
-import { VFC } from 'react';
-import classNames from 'classnames';
+import { VFC } from "react";
+import classNames from "classnames";
 
 type Props = {
   children: React.ReactNode;
@@ -10,14 +10,14 @@ type Props = {
 };
 
 export const PrimaryButton: VFC<Props> = function ({
-  children, onClick, disabled = false, loading = false, className,
+  children,
+  onClick,
+  disabled = false,
+  loading = false,
+  className,
 }) {
   return (
-    <button
-      className={classNames(className)}
-      onClick={onClick}
-      disabled={disabled || loading}
-    >
+    <button className={classNames(className)} onClick={onClick} disabled={disabled || loading}>
       {children}
     </button>
   );

@@ -1,5 +1,5 @@
-import React, { createContext, Dispatch, SetStateAction } from 'react';
-import { UserResponse } from '../types/api/userResponse';
+import React, { createContext, Dispatch, SetStateAction } from "react";
+import { UserResponse } from "../types/api/userResponse";
 
 type LoginUser = UserResponse & { isAdmin: boolean };
 
@@ -13,9 +13,5 @@ export const LoginUserContext = createContext<LoginUserContextType>({} as LoginU
 export const LoginUserProvider = function ({ children }: { children: React.ReactNode }) {
   const [loginUser, setLoginUser] = React.useState<LoginUser | null>(null);
 
-  return (
-    <LoginUserContext.Provider value={{ loginUser, setLoginUser }}>
-      {children}
-    </LoginUserContext.Provider>
-  );
+  return <LoginUserContext.Provider value={{ loginUser, setLoginUser }}>{children}</LoginUserContext.Provider>;
 };
