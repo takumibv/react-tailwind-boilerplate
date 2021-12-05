@@ -3,7 +3,8 @@
   "editor.tabSize": 2,
   "editor.rulers": [120],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,

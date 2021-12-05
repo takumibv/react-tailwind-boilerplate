@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-undef
 module.exports = {
-  purge: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
+  purge: ["./src/**/*.{js,ts,jsx,tsx,css,pcss}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
