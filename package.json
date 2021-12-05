@@ -26,8 +26,12 @@
     "fix:all": "run-p fix:eslint fix:stylelint fix:prettier",
     "fix:eslint": "eslint --ext .jsx,.js,.tsx,.ts src/",
     "fix:stylelint": "stylelint --fix \"src/**/*.{css,scss,sass,pcss}\"",
-    "fix:prettier": "prettier 'src/**/*' --write",
-    "precommit": "lint-staged"
+    "fix:prettier": "prettier 'src/**/*' --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
