@@ -23,7 +23,7 @@ export const Login: VFC = memo(() => {
             placeholder="ユーザID"
             defaultValue={userId}
             onChange={onChangeUserId}
-            className="border border-gray-300 p-2 rounded-lg"
+            className="border border-gray-300 p-2 rounded-lg mr-2"
           />
           <PrimaryButton onClick={onClickLogin} loading={loading} disabled={userId.length === 0}>
             ログイン

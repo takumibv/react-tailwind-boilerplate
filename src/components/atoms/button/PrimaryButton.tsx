@@ -16,9 +16,19 @@ export const PrimaryButton: VFC<Props> = function ({
   loading = false,
   className,
 }) {
+  const isDisabled = disabled || loading;
   return (
-    <button className={classNames(className)} onClick={onClick} disabled={disabled || loading}>
-      {children}
+    <button
+      className={classNames(
+        "text-white py-2 px-4 rounded-md",
+        !isDisabled && "bg-blue-500 hover:bg-blue-700",
+        isDisabled && "bg-blue-200 cursor-default",
+        className,
+      )}
+      onClick={onClick}
+      disabled={isDisabled}
+    >
+      {loading ? "Loading..." : children}
     </button>
   );
 };

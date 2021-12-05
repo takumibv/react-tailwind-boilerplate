@@ -10,12 +10,7 @@ type Props = {
 
 export const UserCard: VFC<Props> = memo(({ id, imageUrl, userName, fullName, onClick }) => (
   <div
-    style={{
-      width: "260px",
-      height: "260px",
-      background: "white",
-      padding: "16px",
-    }}
+    className="p-4 rouned-lg bg-white shadow-lg rounded-lg hover:opacity-70"
     onClick={() => onClick(id)}
     onKeyPress={() => {
       /** キーが押された時 */
@@ -24,9 +19,11 @@ export const UserCard: VFC<Props> = memo(({ id, imageUrl, userName, fullName, on
     tabIndex={0}
   >
     <div>
-      <img src={imageUrl} alt={userName} />
-      <p>{userName}</p>
-      <p>{fullName}</p>
+      <div className="aspect-h-1 aspect-w-1">
+        <img src={imageUrl} alt={userName} className="w-full h-full object-center object-cover" />
+      </div>
+      <p className="text-lg font-bold mt-2">{userName}</p>
+      <p className="text-gray-500">{fullName}</p>
     </div>
   </div>
 ));

@@ -6,8 +6,10 @@ type Props = {
 };
 
 export const HeaderLayout: VFC<Props> = memo(({ children }) => (
-  <>
+  <div className="min-h-screen flex flex-col">
     <Header />
-    {children}
-  </>
+    <main className="bg-gray-100 flex-1">
+      <div className="container mx-auto px-4">{children}</div>
+    </main>
+  </div>
 ));

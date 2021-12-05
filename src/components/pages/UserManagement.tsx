@@ -22,13 +22,13 @@ export const UserManagement: VFC = memo(() => {
   );
 
   return (
-    <>
+    <div className="py-6">
       {loading ? (
         <p>loading</p>
       ) : (
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {users.map((user: UserResponse) => (
-            <div key={user.id}>
+            <div key={user.id} className="">
               <UserCard
                 id={user.id}
                 imageUrl="https://source.unsplash.com/random"
@@ -40,6 +40,6 @@ export const UserManagement: VFC = memo(() => {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 });

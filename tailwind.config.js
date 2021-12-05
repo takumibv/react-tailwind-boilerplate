@@ -1,4 +1,5 @@
-// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
+
 module.exports = {
   purge: ["./src/**/*.{js,ts,jsx,tsx,css,pcss}"],
   darkMode: false, // or 'media' or 'class'
@@ -10,5 +11,5 @@ module.exports = {
       divideColor: ["group-hover"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };
