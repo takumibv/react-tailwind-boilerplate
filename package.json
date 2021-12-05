@@ -24,25 +24,24 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "fix:all": "run-p fix:eslint fix:stylelint fix:prettier",
-    "fix:eslint": "eslint --ext .jsx,.js,.tsx,.ts src/",
+    "fix:eslint": "eslint --ext src/**/*.jsx,.js,.tsx,.ts",
     "fix:stylelint": "stylelint --fix \"src/**/*.{css,scss,sass,pcss}\"",
-    "fix:prettier": "prettier 'src/**/*' --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "fix:prettier": "prettier 'src/**/*' --write",
+    "pre-commit": "lint-staged",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.@(js|jsx|ts|tsx)": [
       "prettier --write",
       "eslint --ext",
       "git add"
     ],
-    "*.{css,pcss}": [
+    "*.@(css|pcss)": [
       "prettier --write",
       "git add"
-    ]
+    ],
+    "*.css": "stylelint --fix",
+    "*.{js,css,md}": "prettier --write"
   },
   "eslintConfig": {
     "extends": [
