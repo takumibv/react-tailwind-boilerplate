@@ -29,19 +29,14 @@
     "fix:prettier": "prettier 'src/**/*' --write",
     "precommit": "lint-staged"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "fix:all"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "yarn prettier --write",
-      "yarn eslint --ext",
+      "prettier --write",
+      "eslint --ext",
       "git add"
     ],
-    "*.{css}": [
-      "yarn prettier --write",
+    "*.{css,pcss}": [
+      "prettier --write",
       "git add"
     ]
   },
