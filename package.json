@@ -24,8 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "fix:all": "run-p fix:eslint fix:stylelint fix:prettier",
-    "fix:eslint": "eslint --ext src/**/*.jsx,.js,.tsx,.ts",
-    "fix:stylelint": "stylelint --fix \"src/**/*.{css,scss,sass,pcss}\"",
+    "fix:eslint": "eslint --ext .js,.jsx,.ts,.tsx src/",
+    "fix:stylelint": "stylelint --fix 'src/**/*.{css,scss,sass,pcss}'",
     "fix:prettier": "prettier 'src/**/*' --write",
     "pre-commit": "lint-staged",
     "prepare": "husky install"
@@ -33,15 +33,13 @@
   "lint-staged": {
     "*.@(js|jsx|ts|tsx)": [
       "prettier --write",
-      "eslint --ext",
-      "git add"
+      "eslint --ext"
     ],
     "*.@(css|pcss)": [
-      "prettier --write",
-      "git add"
+      "stylelint --fix",
+      "prettier --write"
     ],
-    "*.css": "stylelint --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.md": "prettier --write"
   },
   "eslintConfig": {
     "extends": [
